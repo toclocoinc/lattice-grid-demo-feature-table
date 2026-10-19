@@ -32,12 +32,12 @@ const col = (field, title, width, extra = {}) => ({ field, title, layout: { widt
 const grid = createGrid(el('grid'), {
   rowKey: 'id', source: { mode: 'memory' }, highlightOnChange: { duration: 4000 },
   columns: [
-    col('name', 'Customer', 130), col('region', 'Region', 68), col('joined', 'Joined', 104, { type: 'date' }),
+    col('name', 'Customer', 118), col('region', 'Region', 68), col('joined', 'Joined', 104, { type: 'date' }),
     col('orders', 'Orders', 64, { type: 'number' }),
     col('spend', 'Spend', 84, { type: 'number', format: { decimals: 2 } }),
     col('lastPurchase', 'Last purchase', 106, { type: 'date' }),
     col('cf_plan', 'Plan', 60), col('cf_nps', 'NPS', 52, { type: 'number' }),
-    col('cf_newsletter', 'Newsletter', 84, { type: 'boolean' }),
+    col('cf_newsletter', 'Newsletter', 100, { type: 'boolean' }),
     col('cf_loyalty_since', 'Loyal since', 100, { type: 'date' }), col('churned', 'Churned', 76, { type: 'boolean' }),
   ],
 });
