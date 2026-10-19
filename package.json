@@ -1,0 +1,8 @@
+{
+  "name": "lattice-grid-demo-feature-table",
+  "private": true,
+  "type": "module",
+  "description": "Feature table without glue code: a Lattice Grid data router demo",
+  "scripts": { "serve": "node tools/serve.mjs 8000", "verify": "node tools/verify.mjs" },
+  "devDependencies": { "puppeteer-core": "^24.0.0" }
+}
