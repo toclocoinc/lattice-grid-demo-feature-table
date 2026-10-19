@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feature table without glue code | Lattice Grid</title>
+<meta name="description" content="Four raw feeds (customers, transactions, custom attributes, churn labels) shaped by the Lattice Grid data router into one live grid of customer features. No glue code.">
+<link rel="icon" href="data:,">
+<script>
+  if (new URLSearchParams(location.search).get('theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+</script>
+<!-- The grid comes from the published package. To use a newer release, change the version in these three lines. -->
+<script type="importmap">
+{ "imports": {
+  "@toclocoinc/lattice-grid": "https://cdn.latticegrid.dev/lattice-grid@1.108.0/lattice-grid.esm.min.js",
+  "@toclocoinc/lattice-grid/modules/data-router": "https://cdn.latticegrid.dev/lattice-grid@1.108.0/modules/data-router.esm.min.js" } }
+</script>
+<link rel="stylesheet" href="https://cdn.latticegrid.dev/lattice-grid@1.108.0/lattice-grid.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Feature table without glue code</h1>
+  <p class="lede">Four raw feeds from four systems (customers, transactions, custom attributes and churn labels) go in one end.
+    The data router joins, rolls up, spreads and types them, and one grid of customer features comes out. The panel beside it
+    shows the router declaration that is running, read from the same object.</p>
+  <div class="bar">
+    <button id="stream" type="button">New transactions</button>
+    <span id="summary" aria-live="polite"></span>
+  </div>
+</header>
+<main class="layout">
+  <section class="panel" id="grid-panel">
+    <div class="panel__head">Customer features: one row per customer, built live</div>
+    <div class="panel__body"><div id="grid"></div></div>
+  </section>
+  <section class="panel" id="decl-panel">
+    <div class="panel__head">The router declaration, running now</div>
+    <p class="panel__note" id="feeds"></p>
+    <pre class="panel__body" id="decl" tabindex="0"></pre>
+  </section>
+</main>
+<footer>
+  Every customer, shop and figure is invented (seeded, so the feeds are the same every visit).
+  Built with <a href="https://www.latticegrid.dev/data-router/">the Lattice Grid data router</a>. No keys, no analytics.
+</footer>
+<script type="module" src="main.js"></script>
+</body>
+</html>
